@@ -1,0 +1,633 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="My Portfolio">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Actor&family=Anton&family=Bebas+Neue&family=Covered+By+Your+Grace&family=Faster+One&family=Jost:wght@500&family=NTR&family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/pure-min.css">
+<link rel="shortcut icon" type="image/x-icon" href="download.png" />
+    <title>  Rohit Saha &ndash; Portfolio</title>
+    <style media="screen">
+
+body {
+color: #777;
+}
+p{
+  word-wrap: break-word;
+}
+.pure-img-responsive {
+max-width: 100%;
+height: auto;
+}
+
+/*
+Add transition to containers so they can push in and out.
+*/
+#layout,
+#menu,
+.menu-link {
+-webkit-transition: all 0.2s ease-out;
+-moz-transition: all 0.2s ease-out;
+-ms-transition: all 0.2s ease-out;
+-o-transition: all 0.2s ease-out;
+transition: all 0.2s ease-out;
+}
+
+/*
+This is the parent `<div>` that contains the menu and the content area.
+*/
+#layout {
+position: relative;
+left: 0;
+padding-left: 0;
+}
+#layout.active #menu {
+    left: 150px;
+    width: 150px;
+}
+
+#layout.active .menu-link {
+    left: 150px;
+}
+/*
+The content `<div>` is where all your content goes.
+*/
+.content {
+margin: 0 auto;
+padding: 0 2em;
+max-width: 800px;
+margin-bottom: 50px;
+line-height: 1.6em;
+}
+
+.header {
+ margin: 0;
+ color: #333;
+ text-align: center;
+ padding: 2.5em 2em 0;
+ border-bottom: 1px solid #eee;
+}
+.header h1 {
+    margin: 0.2em 0;
+    font-size: 3em;
+
+    font-weight: 300;
+}
+ .header h2 {
+    font-weight: 300;
+    color: #ccc;
+    padding: 0;
+    margin-top: 0;
+}
+
+.content-subhead {
+margin: 50px 0 20px 0;
+font-weight: 300;
+color: #888;
+}
+
+
+
+/*
+The `#menu` `<div>` is the parent `<div>` that contains the `.pure-menu` that
+appears on the left side of the page.
+*/
+
+#menu {
+margin-left: -150px; /* "#menu" width */
+width: 150px;
+position: fixed;
+top: 0;
+left: 0;
+bottom: 0;
+z-index: 1000; /* so the menu or its navicon stays above all content */
+background: #191818;
+overflow-y: auto;
+-webkit-overflow-scrolling: touch;
+}
+/*
+All anchors inside the menu should be styled like this.
+*/
+#menu a {
+    color: #999;
+    border: none;
+    padding: 0.6em 0 0.6em 0.6em;
+    font-size: 22px;  font-family: 'Covered By Your Grace', cursive;
+}
+
+#menu .pure-menu-item a:hover{
+  color:yellow;
+}
+
+ #menu .pure-menu,
+ #menu .pure-menu ul {
+    border: none;
+    background: transparent;
+}
+
+#menu .pure-menu ul,
+#menu .pure-menu .menu-item-divided {
+    border-top: 1px solid #333;
+}
+    /*
+    Change color of the anchor links on hover/focus.
+    */
+    #menu .pure-menu li a:hover,
+    #menu .pure-menu li a:focus {
+        background: #333;
+    }
+
+/*
+This styles the selected menu item `<li>`.
+*/
+#menu .pure-menu-selected,
+#menu .pure-menu-heading {
+    background: #1f8dd6;
+}
+    /*
+    This styles a link within a selected menu item `<li>`.
+    */
+    #menu .pure-menu-selected a {
+        color: #fff;
+    }
+    .browser.icon {
+      color: #000;
+      position: absolute;
+      margin-left: 2px;
+      margin-top: 2px;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      border: solid 1px currentColor;
+    }
+
+    .browser.icon:before {
+      content: '';
+      position: absolute;
+      left: 1px;
+      top: 1px;
+      width: 11px;
+      height: 11px;
+      border-radius: 85% 15%;
+      -webkit-transform: rotate(-45deg);
+              transform: rotate(-45deg);
+      border: solid 1px currentColor;
+    }
+
+    .browser.icon:after {
+      content: '';
+      position: absolute;
+      top: 7px;
+      width: 15px;
+      height: 1px;
+      background-color: currentColor;
+    }
+
+
+/*
+This styles the menu heading.
+*/
+#menu .pure-menu-heading {
+    font-size: 110%;
+    color: #fff;
+    margin: 0;
+}
+
+/* -- Dynamic Button For Responsive Menu -------------------------------------*/
+
+/*
+The button to open/close the Menu is custom-made and not part of Pure. Here's
+how it works:
+*/
+
+/*
+`.menu-link` represents the responsive menu toggle that shows/hides on
+small screens.
+*/
+.menu-link {
+position: fixed;
+display: block; /* show this only on small screens */
+top: 0;
+left: 0; /* "#menu width" */
+background: #000;
+background: rgba(0,0,0,0.7);
+font-size: 10px; /* change this value to increase/decrease button size */
+z-index: 10;
+width: 2em;
+height: auto;
+padding: 2.1em 1.6em;
+}
+
+.menu-link:hover,
+.menu-link:focus {
+    background: #000;
+}
+
+.menu-link span {
+    position: relative;
+    display: block;
+}
+
+.menu-link span,
+.menu-link span:before,
+.menu-link span:after {
+    background-color: #fff;
+    width: 100%;
+    height: 0.2em;
+}
+
+    .menu-link span:before,
+    .menu-link span:after {
+        position: absolute;
+        margin-top: -0.6em;
+        content: " ";
+    }
+
+    .menu-link span:after {
+        margin-top: 0.6em;
+    }
+a{
+  text-decoration: none;
+}
+.header h1{
+font-family: 'Jost', sans-serif;
+font-size: 60px;
+
+}
+h2{ width: 100%;
+
+ font-family: 'Bebas Neue', cursive;
+}
+h2:hover {
+color: black;
+ width: 300px;
+  border-bottom: 2px solid #3366FF;
+  transition: 0.3s;
+}
+.header h1:hover{
+  color: #1f8dd6;
+
+}
+
+
+@media (min-width: 48em) {
+
+.header,
+.content {
+    padding-left: 2em;
+    padding-right: 2em;
+}
+p{  padding-left: 30px;
+  color: black;
+  font-size: 20px;
+  font-family: 'Poppins', sans-serif;
+}
+
+
+#layout {
+    padding-left: 150px; /* left col width "#menu" */
+    left: 0;
+}
+#menu {
+    left: 150px;
+}
+
+.menu-link {
+    position: fixed;
+    left: 150px;
+    display: none;
+}
+
+#layout.active .menu-link {
+    left: 150px;
+}
+}
+
+
+@media (max-width: 48em) {
+/* Only apply this when the window is small. Otherwise, the following
+case results in extra padding on the left:
+    * Make the window small.
+    * Tap the menu to trigger the active state.
+    * Make the window large again.
+*/
+#layout.active {
+    position: relative;
+    left: 150px;
+}
+}
+.bookmark-solid.icon {
+  color: #000;
+  position: absolute;
+  margin-left: 5px;
+  margin-top: 3px;
+  width: 10px;
+  height: 15px;
+  border-radius: 1px 1px 0 0;
+  border-top: solid 1px currentColor;
+  border-left: solid 1px currentColor;
+  border-right: solid 1px currentColor;
+  background-color: currentColor;
+}
+.arrow-right.icon {
+  color: #000;
+  position: absolute;
+  margin-left: 2px;
+  margin-top: 10px;
+  width: 16px;
+  height: 1px;
+  background-color: currentColor;
+}
+
+.arrow-right.icon:before {
+  content: '';
+  position: absolute;
+  right: 1px;
+  top: -5px;
+  width: 10px;
+  height: 10px;
+  border-top: solid 1px currentColor;
+  border-right: solid 1px currentColor;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+
+.bookmark-solid.icon:before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 1px;
+  width: 7px;
+  height: 7px;
+  border-top: solid 1px currentColor;
+  border-left: solid 1px currentColor;
+  background-color: white;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+div.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background-color: white;
+  padding: 20px;
+  font-size: 20px;
+
+  text-align: right;
+}
+
+
+.content .fa {
+  color:#2360c9;
+  }
+ .content .fa:hover {
+   color:
+#999;}
+
+
+
+  </style>
+
+
+  <script type="text/javascript">
+		var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+		if (isMobile) {
+  		alert( "Best viewed in a PC!");
+		} else {
+
+		}
+	</script>
+</head>
+<body>
+
+<div id="layout" >
+
+
+
+    <div id="menu">
+        <div class="pure-menu">
+            <a class="pure-menu-heading" href="#" style="font-family: 'Jost', sans-serif; font-size:20px;" >Rohit Saha</a>
+
+            <ul class="pure-menu-list">
+              <li id="imagepot" class="pure-menu-item"> <a class="pure-menu-link">
+                  <img  style=" object-fit: cover;"src="q.png" alt="Avatar" class="image"> </a></li>
+               <hr>
+                <li class="pure-menu-item"><a href="#edu" class="pure-menu-link">
+   &nbsp;&nbsp;&nbsp;   <i class="fa fa-graduation-cap" style="font-size:48px"></i> </a></li>
+                <br>
+                <li class="pure-menu-item"><a href="#softwareskills" class="pure-menu-link">
+                     &nbsp;&nbsp;&nbsp;  <i class="fa fa-keyboard-o" style="font-size:48px; "></i></a></li>
+                <br>
+<li class="pure-menu-item"><a href="#projects" class="pure-menu-link">
+                   &nbsp;&nbsp;&nbsp;&nbsp;  <i class="fa fa-lightbulb-o" style="font-size:48px; "></i> </a></li>
+<br>
+
+                <li class="pure-menu-item"><a href="#contact" class="pure-menu-link">
+                               &nbsp;&nbsp;&nbsp;
+<i class="fa fa-user-circle-o" style="font-size:48px; "></i>
+</a></li>
+                <br>
+            </ul>
+        </div>
+    </div>
+
+  <div id="sticks"class="sticky">
+    <i class="fa fa-battery-three-quarters" style="color:black;"> </i> &nbsp; </div>
+    <div id="main">
+
+        <div class="header">
+
+     <h1>Rohit Saha</h1>
+            <h3  id="edu" style=" font-size: 25px; opacity: 50%;font-family: 'NTR', sans-serif;">Jack of many trades</h2>
+        </div>
+
+        <div class="content">
+
+            <h2   class="content-subhead">Educational Qualifications</h2>
+
+  <p>
+<i class="fa fa-graduation-cap" style="font-size:24px"></i> <font style="font-size:18px;"> B.Tech , Electronics and Communication Engineering (expected 2022)</font>   <br>
+    &nbsp;&nbsp;&nbsp;<strong>National Institute of Technology Agartala</strong>
+            </p>
+
+        <p>
+<i class="fa fa-graduation-cap" style="font-size:24px"></i><font style="font-size:18px;"> Senior Secondary (2018)</font>
+                     <br>
+        &nbsp;&nbsp;&nbsp;  <strong>Hindi Higher Secondary School</strong>
+                  </p>
+
+
+                          <p>
+<i class="fa fa-graduation-cap" style="font-size:24px"></i> <font style="font-size:18px;"> Secondary (2016)</font>
+                                 <br>
+&nbsp;&nbsp;&nbsp;                            <strong>Pranavananda Vidyamandir</strong>
+                                    </p>
+
+
+            <h2 class="content-subhead"> Academic Achievements</h2>
+
+          <p>
+            <i class="fa fa-history" style="font-size:24px"></i>
+                Qualified Regional Mathematical Olympiad,2016 (from Tripura Region)
+            </p>
+            <p>
+              <i class="fa fa-history" style="font-size:24px"></i>
+Excellent Achievement in AISSCE 2016.
+              </p>
+
+            <h2 class="content-subhead"> Interests</h2>
+            <p><i class="fa fa-tag" style="font-size:24px"></i>
+                UAVs              </p>
+            <p><i class="fa fa-tag" style="font-size:24px"></i>
+                Robotics            </p>
+                <p id="softwareskills"><i class="fa fa-tag" style="font-size:24px"></i>
+                  Web Developement              </p>
+
+                  <h2  class="content-subhead"> Work Experience</h2>
+
+                  <p >
+                  <i <i class="fa fa-angle-double-right" style="font-size:24px"></i>&nbsp;<strong>Content Writer</strong>
+
+, Illumnus Educational Technologies Pvt. Ltd. (May-September,2019)
+                </p>
+
+                  <p>
+
+
+                          <h2  class="content-subhead"> Software Skills</h2>
+
+
+
+                          <p >
+<i class="fa fa-keyboard-o" style="font-size:24px"></i>&nbsp;Programming Language - <strong>C</strong> , <strong>Python</strong> , <strong>Javascript</strong> </p>
+
+                          <p>
+<i class="fa fa-keyboard-o" style="font-size:24px"></i>&nbsp;Font-end Development - <strong>HTML/CSS</strong> , <strong>Bootstrap</strong> , <strong>PureCSS</strong> </p>
+
+                          <p>
+<i class="fa fa-keyboard-o" style="font-size:24px"></i></i>&nbsp;Back-end Development - <strong>Flask</strong> , <strong>Django</strong> </p>
+
+                          <p>
+                            <i class="fa fa-keyboard-o" style="font-size:24px"></i>
+ &nbsp;Softwares - <strong>MATLAB</strong> , <strong>OpenVSP</strong>, <strong>Adobe PhotoShop</strong> , <strong>SONY Vegas</strong> , <strong>Figma</strong> </p>
+
+ <h2 class="content-subhead"> Soft Skills</h2>
+
+ <p>
+<i class="fa fa-handshake-o" style="font-size:24px"></i>
+Public Speaking</p>
+
+ <p  id="projects">
+<i class="fa fa-handshake-o" style="font-size:24px"></i>
+Team Management</p>
+
+
+                          <h2 class="content-subhead"> Projects</h2>
+                          <p > <i class="fa fa-lightbulb-o" style="font-size:24px"></i> <strong>Designing & Fabrication of fixed-wing Aircraft.</strong> <br>To design an RC fixed wing aircraft and study the aerodynamic
+ properties by studying the aircraft. Further, fabrication of the fuselage using light-
+ durable material. </p>
+ <p><i class="fa fa-lightbulb-o" style="font-size:24px"></i> <strong>Development of Quad-Copter.</strong> <br>
+   To develop an RC Multi-rotor Copter (from structural design
+   to electronics)and study the applications of such copters in various roles. </p>
+
+
+   <p> <i class="fa fa-lightbulb-o" style="font-size:24px"></i><strong>Development of semi-autonomous tri-copter drone. </strong><code> (on-going) </code> <br>
+     To develop a tri-prop drone having specifications of
+ collision avoidance, automatic landing system using Matlab Simulink, Arduino and
+ conducting further research on it. </p>
+
+ <p><i class="fa fa-lightbulb-o" style="font-size:24px"></i> <strong>Development of a Student Directory WebApp </strong><br>
+   To develop a student directory web app using tools like, HTML,CSS and Flask </p>
+
+
+    <p> <i class="fa fa-lightbulb-o" style="font-size:24px"></i><strong>Development of a Community sharing Website - ArtistsHub</strong><br>
+      To develop a website where user can upload pictures with caption and view other users' posts as well using tools like, HTML,CSS,JS and Flask
+    <code style="color:#007AA5;">https://artistshub0site.pythonanywhere.com/ </code></p>
+    <p><i class="fa fa-lightbulb-o" style="font-size:24px"></i><strong>Development of a Chat and Messaging Website - Chatify</strong><br>
+      To develop a website where user can communicate with other users and chat in real time using tools like, HTML,CSS,JS and Flask
+    <code style="color:#007AA5;">http://chattify.pythonanywhere.com/</code></p>
+    <p><i class="fa fa-lightbulb-o" style="font-size:24px"></i><strong>Development of an encryption tool</strong><br>
+      To develop a  encryption tool which takes in a particular string and can also decrypt the cipher.
+ </p>
+ <p><i class="fa fa-lightbulb-o" style="font-size:24px"></i><strong>Development of a website for IIITAgartala </strong> <code>(On-going) </code><br>
+   To develop a static Institute  website for IIITAgartala. Contributing member.
+</p>
+
+    <h2 class="content-subhead"> Courses and Trainings</h2>
+
+
+    <p>
+      <i class="fa fa-plug" style="font-size:24px"></i>
+      Course on Design of Fixed-wing Un-manned Aerial Vehicles, under Prof. Subramaniam
+      Sardela, IITK. NPTEL.
+    </p>
+    <p>
+     <i class="fa fa-plug" style="font-size:24px"></i>
+    Training on  Application of Cloud Technology under, National Informatics Center,
+ Tripura (15Dec,2019-03Jan,2020)
+      </p>
+
+      <h2 class="content-subhead"> Extras</h2>
+      <p>
+        <i class="fa fa-star" style="font-size:24px"></i>
+        Member of ANIMA- Aero Club, Literary Club, Pixels-Media Club and EntrepreneurshipCell in NIT Agartala.
+        </p>
+
+        <p>
+          <i class="fa fa-star" style="font-size:24px"></i>
+          Co-Organized Carpe Diem 2.0 (E-summit),2019 in NIT Agartala.          </p>
+          <p>
+            <i class="fa fa-star" style="font-size:24px"></i>
+            Co-Organized 4 Cultural events and 2 technical events.
+            </p>
+
+
+
+            <h2 id="contact" class="content-subhead">Contact</h2>
+            <p>
+              <i class="fa fa-paper-plane" style="font-size:24px"></i>
+
+                <code>rohitsahaagt@gmail.com</code>
+              <br>          <br>
+
+
+<i class="fa fa-github-square"style="font-size:24px" ></i>
+<code>/rohitmadrileno15</code>
+<br>          <br>
+
+
+<i class="fa fa-instagram" style="font-size:24px" ></i>
+<code>@justro.hit</code>
+<br>          <br>
+<i class="fa fa-youtube" style="font-size:24px"></i>
+<code>/justro.hit</code>
+<br>          <br>
+<i class="fa fa-map-marker" style="font-size:24px"></i>
+<code>Agartala, India</code>
+<br>          <br>
+         </p>
+
+
+        </div>
+    </div>
+</div>
+
+<script src="/js/ui.js"></script>
+<script type="text/javascript">
+
+  if (navigator.onLine) {
+    var div = document.getElementById('sticks');
+
+    div.innerHTML += "<i class='fa fa-wifi' style='color:black;'></i>" ;
+  } else {
+
+  }
+
+</script>
+</body>
+</html>
